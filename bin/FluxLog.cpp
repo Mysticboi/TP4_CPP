@@ -16,7 +16,6 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "FluxLog.h"
-
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
@@ -78,6 +77,10 @@ FluxLog::~FluxLog ( )
     cout << "Appel au destructeur de <FluxLog>" << endl;
 #endif
 } //----- Fin de ~FluxLog
+
+LigneLog FluxLog:: ProchainLog() const{
+    
+}
 
 
 //------------------------------------------------------------------ PRIVE

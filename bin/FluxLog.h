@@ -32,6 +32,7 @@ struct LigneLog{
     string AuthenticatedUser;
     string Date;
     string Heure;
+    string Cible;
     string Status;
     string QuantiteDonnees;
     string Referant;
@@ -91,6 +92,10 @@ public:
     //
 
     LigneLog ProchainLog() const;
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
 
 
 
