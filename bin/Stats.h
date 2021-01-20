@@ -68,11 +68,18 @@ public:
     // Contrat :
     //
 
-    void Ajouter(string Cible, string Referent,string Heure);
+    void AjouterGraphe(string Cible, string Referent,string Heure);
     // Mode d'emploi :
     // Ajouter une ligne dans la MapGraphe
     // Contrat :
     //
+
+    void AjouterTop10(string Cible, string Referent);
+    // Mode d'emploi :
+    // Ajouter une ligne dans la MapTop10
+    // Contrat :
+    //
+
 
     void GenererGraphe();
     // Mode d'emploi :
