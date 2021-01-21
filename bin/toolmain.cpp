@@ -25,6 +25,7 @@ void onlyLogFile(const char * logFileNamec)
 //		else
 //			G.AjouterTop10(myLigneLog.Cible);
 //	}
+//	G.Top10();
 
 	//================================================Bloque temporaire===================================
 	myLigneLog = myFlux.ProchainLog();
@@ -68,6 +69,7 @@ void logFile_g(const char * logFileNamec, const char * fileNameDotc)
 //		else
 //			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
 //	}
+//	G.GenererGraphe();
 
 
 	//================================================Bloque temporaire===================================
@@ -114,6 +116,7 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 //		else
 //			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
 //	}
+//	G.GenererGraphe();
 
 
 	//================================================Bloque temporaire===================================
@@ -160,6 +163,7 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 	//	else
 	//		G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
 	//}
+	//	G.GenererGraphe();
 
 
 	//================================================Bloque temporaire===================================
@@ -209,6 +213,7 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 	//	else
 	//		G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
 	//}
+	//	G.GenererGraphe();
 
 	//================================================Bloque temporaire===================================
 	myLigneLog = myFlux.ProchainLog();
