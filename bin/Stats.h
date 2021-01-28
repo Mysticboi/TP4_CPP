@@ -68,7 +68,7 @@ public:
     // Contrat :
     //
 
-    void AjouterGraphe(string Cible, string Referent,string Heure);
+    void AjouterGraphe(string Cible, string Referent);
     // Mode d'emploi :
     // Ajouter une ligne dans la MapGraphe
     // Contrat :
@@ -81,7 +81,7 @@ public:
     //
 
 
-    void GenererGraphe();
+    void GenererGraphe(string nomFichier);
     // Mode d'emploi :
     // Genere le fichier graphe nomFichier.dot
     // Contrat :

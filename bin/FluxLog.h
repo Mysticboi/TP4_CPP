@@ -111,4 +111,3 @@ protected:
 //-------------------------------- Autres définitions dépendantes de <FluxLog>
 
 #endif // FluxLog_H
-

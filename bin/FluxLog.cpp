@@ -79,7 +79,8 @@ FluxLog::~FluxLog ( )
 } //----- Fin de ~FluxLog
 
 LigneLog FluxLog:: ProchainLog() const{
-    
+    LigneLog l;
+    return l;
 }
 
 
