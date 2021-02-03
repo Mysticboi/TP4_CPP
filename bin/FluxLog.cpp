@@ -116,6 +116,9 @@ LigneLog FluxLog:: ProchainLog(){
 	myLigneLog.Cible = tokens[6];
 	myLigneLog.Status = tokens[8];
 	myLigneLog.QuantiteDonnees = tokens[9];
+	if(myLigneLog.Referant.size()>=32)
+		myLigneLog.Referant = myLigneLog.Referant.substr(32,myLigneLog.Referant.size()-32);
+	myLigneLog.Cible = myLigneLog.Cible.substr(1,myLigneLog.Cible.size()-1);
 	return myLigneLog;
 }
 
