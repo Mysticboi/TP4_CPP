@@ -107,21 +107,21 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 	Stats G;
 	
 	//boucle de traitement du fichier
-//	while(!myFlux.eof())
-//	{
-//		myLigneLog = myFlux.ProchainLog();
-//		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
-//			continue;
-//		else if(Heure!=myLigneLog.Heure)
-//			continue;
-//		else
-//			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
-//	}
-//	G.GenererGraphe();
+	while(!myFlux.eof())
+	{
+		myLigneLog = myFlux.ProchainLog();
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+			continue;
+		else if(Heure!=myLigneLog.Heure)
+			continue;
+		else
+			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
+	}
+	G.GenererGraphe(dotFileName);
 
 
 	//================================================Bloque temporaire===================================
-	myLigneLog = myFlux.ProchainLog();
+	/*myLigneLog = myFlux.ProchainLog();
 	cout<<"IP : "<<myLigneLog.IP<<endl;
 	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
 	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
@@ -132,6 +132,7 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
 	cout<<"Referant : "<<myLigneLog.Referant<<endl;
 	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
+	*/
 	//================================================Fin Bloque temporaire===================================
 }
 
@@ -153,22 +154,22 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 
 
 	//boucle de traitement du fichier
-	//while(!myFlux.eof())
-	//{
-	//	myLigneLog = myFlux.ProchainLog();
-	//	if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
-	//		continue;
-	//	//On passe si le fichier est un js un css un jpeg un gif ou un png
-	//	else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-5,5)==".jpeg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
-	//		continue;
-	//	else
-	//		G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
-	//}
-	//	G.GenererGraphe();
+	while(!myFlux.eof())
+	{
+		myLigneLog = myFlux.ProchainLog();
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+			continue;
+		//On passe si le fichier est un js un css un jpeg un gif ou un png
+		else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+			continue;
+		else
+			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
+	}
+		G.GenererGraphe(dotFileName);
 
 
 	//================================================Bloque temporaire===================================
-	myLigneLog = myFlux.ProchainLog();
+	/*myLigneLog = myFlux.ProchainLog();
 	cout<<"IP : "<<myLigneLog.IP<<endl;
 	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
 	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
@@ -179,6 +180,7 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
 	cout<<"Referant : "<<myLigneLog.Referant<<endl;
 	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
+	*/
 	//================================================Fin Bloque temporaire===================================
 }
 
@@ -201,23 +203,23 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 	Stats G;
 
 	//boucle de traitement du fichier
-	//while(!myFlux.eof())
-	//{
-	//	myLigneLog = myFlux.ProchainLog();
-	//	if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
-	//		continue;
-	//	else if(Heure!=myLigneLog.Heure)
-	//		continue;
-	//	//On passe si le fichier est un js un css un jpeg un gif ou un png
-	//	else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-5,5)==".jpeg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
-	//		continue;
-	//	else
-	//		G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
-	//}
-	//	G.GenererGraphe();
+	while(!myFlux.eof())
+	{
+		myLigneLog = myFlux.ProchainLog();
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+			continue;
+		else if(Heure!=myLigneLog.Heure)
+			continue;
+		//On passe si le fichier est un js un css un jpeg un gif ou un png
+		else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-5,5)==".jpeg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+			continue;
+		else
+			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
+	}
+		G.GenererGraphe(dotFileName);
 
 	//================================================Bloque temporaire===================================
-	myLigneLog = myFlux.ProchainLog();
+	/*myLigneLog = myFlux.ProchainLog();
 	cout<<"IP : "<<myLigneLog.IP<<endl;
 	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
 	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
@@ -228,5 +230,6 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
 	cout<<"Referant : "<<myLigneLog.Referant<<endl;
 	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
+	*/
 	//================================================Fin Bloque temporaire===================================
 }

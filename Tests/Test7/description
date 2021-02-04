@@ -1,1 +1,2 @@
-Essai de test de recopie d'un fichier sur l'erreur standard
+Essai de la commande ./analog -g nomfichier.dot nomFic.log qui permet la production du fichier graphe, mais le fichier log comporte des lignes sans référent ou cible( -à la place) ces lignes doivent être ignorés.
+

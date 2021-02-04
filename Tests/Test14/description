@@ -1,0 +1,1 @@
+Essai de la commande ./analog -t heure -g nomfichier.dot nomFic.log qui permet la production du fichier graphe en tenant compte de l'heure, mais nomFic.log est erroné (pas de type .log)
