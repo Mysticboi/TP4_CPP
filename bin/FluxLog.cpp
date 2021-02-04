@@ -93,21 +93,26 @@ LigneLog FluxLog:: ProchainLog(){
 
     string intermediate;
 
-    while(getline(check1, intermediate, '"'))
+    while(getline(check1, intermediate, '"')){
         tokens.push_back(intermediate);
-	if(tokens.size()<3)
+	}
+
+	if(tokens.size()<3){
 		return myLigneLog;
+	}
 	myLigneLog.Navigateur = tokens[tokens.size()-1];
 	myLigneLog.Referant = tokens[tokens.size()-3];
 
 	tokens.clear();
 	intermediate.clear();
     stringstream check2(line);
-    while(getline(check2, intermediate, ' '))
+    while(getline(check2, intermediate, ' ')){
         tokens.push_back(intermediate);
+	}
 
-	if(tokens.size()<10)
+	if(tokens.size()<10){
 		return myLigneLog;
+	}
 	myLigneLog.IP = tokens[0];
 	myLigneLog.UserLogname = tokens[1];
 	myLigneLog.AuthenticatedUser = tokens[2];

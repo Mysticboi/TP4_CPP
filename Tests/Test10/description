@@ -1,0 +1,1 @@
+Essai de la commande ./analog -e -g nomfichier.dot nomFic.log qui permet la production du fichier graphe en exculant les images-css-js , mais nomFic.log est invalide(pas de type .log)
