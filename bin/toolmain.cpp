@@ -112,7 +112,10 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 		myLigneLog = myFlux.ProchainLog();
 		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
 			continue;
-		else if(Heure!=myLigneLog.Heure)
+		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
+		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
+		int HeureSpecifiePlus1 = HeureSpecifie+100;
+		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1)
 			continue;
 		else
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
@@ -208,7 +211,10 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 		myLigneLog = myFlux.ProchainLog();
 		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
 			continue;
-		else if(Heure!=myLigneLog.Heure)
+		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
+		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
+		int HeureSpecifiePlus1 = HeureSpecifie+100;
+		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1)
 			continue;
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
 		else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-5,5)==".jpeg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
