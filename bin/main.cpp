@@ -56,7 +56,7 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
-		cout<<"analog : commande incorrecte - Tapez \"man analog\" pour afficher le manuel\n";
+		cout<<"analog : commande incorrecte - Tapez \"man ./analog.man\" pour afficher le manuel\n";
 	}
     return 0;
 }
