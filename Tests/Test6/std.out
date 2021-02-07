@@ -1,2 +1,2 @@
 Vous devez renseigner un fichier log existant avec une extension ".log"
-Pour plus d'informations veuillez consulter le manuel : "man analog"
+Pour plus d'informations veuillez consulter le manuel : "man ./analog.man"
