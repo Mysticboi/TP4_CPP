@@ -18,8 +18,11 @@
 
 //------------------------------------------------------------------ Types
 typedef unordered_map<string,unordered_map<string,unsigned int>> MapPrincipal;
+typedef unordered_map<string,unsigned int> UMapTop10;
+typedef multimap<unsigned int, string> MMapTop10;
+
 typedef unordered_map<string,unsigned int> MapSecondaire1;
-typedef multimap<unsigned int, string> MapSecondaire2;
+
 
 //------------------------------------------------------------------------
 // Rôle de la classe <Stats>
@@ -68,30 +71,27 @@ public:
     // Contrat :
     //
 
-    void AjouterGraphe(string Cible, string Referent,string Heure);
+    void AjouterGraphe(string Cible, string Referent);
     // Mode d'emploi :
     // Ajouter une ligne dans la MapGraphe
     // Contrat :
     //
 
-    void AjouterTop10(string Cible, string Referent);
-    // Mode d'emploi :
-    // Ajouter une ligne dans la MapTop10
-    // Contrat :
-    //
-
-
-    void GenererGraphe();
+    void GenererGraphe(string nomFichier);
     // Mode d'emploi :
     // Genere le fichier graphe nomFichier.dot
     // Contrat :
     //
 
+    void Recenser(string Cible);
+    // Mode d'emploi :
+    // Ajouter une ligne dans la MapTop10
+    // Contrat :
+
     void Top10();
     // Mode d'emploi :
-    // Génère les attributs Top10 et affiche le résultat
+    // 
     // Contrat :
-    //
 
 //------------------------------------------------------------------ PRIVE
 
@@ -100,8 +100,8 @@ protected:
 
 //----------------------------------------------------- Attributs protégés
     MapPrincipal MapGraphe;
-    MapSecondaire1 MapTop10_1;
-    MapSecondaire2 MapTop10_2;
+    UMapTop10 UMap;
+    MMapTop10 MMap;
     
 
 

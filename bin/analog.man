@@ -1,0 +1,37 @@
+.\" Manpage for analog.
+.\" Contact irvin.cote@insa-lyon.fr for questions.
+.TH man 8 "20 January 2021" "1.0" "analog man page"
+.SH NAME
+analog \- analyse a apache log file 
+.SH SYNOPSIS
+analog [ -g dot_file [-t HH:MM] [-e] ] log_file.log
+.SH DESCRIPTION
+analog is a C++ application that allows you to analyse a apache log file. 
+Without any options the program gives you a top 10 of the most fetched targets. 
+ The following options are available :
+
+
+
+-g : Generates a graph of navigation from the log file. This option takes as a compulsory argument a file name. The program will create a dot file with this file name. This created file will contain the graph of navigation. If the file already exits its content is going to be replaced by that of the new graph.
+
+
+-t : This option is to be used in conjunction with the option -g.
+It takes as a compulsory argument an hour of the form 'HH:MM'
+The graph generated represents requests that were made within one hour of the given time. 
+
+
+-e : This option is to be used in conjunction with the option -g.
+The graph is generated without taking into account the targets that are javascript files or images files or
+css files.
+.SH EXEMPLES
+analog log_file.log -- Top 10 fetched targets 
+
+
+analog -g dot_file file_log.log -- Creates or updates dot_file.dot, generates a graph of navigation into the dot file
+
+
+analog -g dot_file -t HH:MM file_log.log -- same as previous exemple but focused on the specified time 
+
+
+.SH AUTHOR
+Irvin Cote -- Wallid Oulderra -- Mehdi Abdellaoui (irvin.cote@insa-lyon.fr)

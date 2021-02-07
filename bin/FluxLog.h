@@ -44,13 +44,19 @@ struct LigneLog{
 
 
 
-class FluxLog:public ifstream
+class FluxLog
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste des paramètres );
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+	
+    bool eof();
     // Mode d'emploi :
     //
     // Contrat :
@@ -91,7 +97,7 @@ public:
     // Contrat :
     //
 
-    LigneLog ProchainLog() const;
+    LigneLog ProchainLog();
     // Mode d'emploi :
     //
     // Contrat :
@@ -102,6 +108,7 @@ public:
 //------------------------------------------------------------------ PRIVE
 
 protected:
+	ifstream file;
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
