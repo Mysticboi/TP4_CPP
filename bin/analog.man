@@ -4,10 +4,10 @@
 .SH NAME
 analog \- analyse a apache log file 
 .SH SYNOPSIS
-analog [ -g dot_file [-t HH:MM] [-e] ] log_file.log
+analog [-t HH:MM] [ -g dot_file ] [-e] log_file.log
 .SH DESCRIPTION
 analog is a C++ application that allows you to analyse a apache log file. 
-Without any options the program gives you a top 10 of the most fetched targets. 
+The program always displays the top 10 of the most fetched targets in addition to the other functionalities specified by the options. 
  The following options are available :
 
 
@@ -24,13 +24,13 @@ The graph generated represents requests that were made within one hour of the gi
 The graph is generated without taking into account the targets that are javascript files or images files or
 css files.
 .SH EXEMPLES
-analog log_file.log -- Top 10 fetched targets 
+analog log_file.log -- Top 10 fetched targets only.
 
 
-analog -g dot_file file_log.log -- Creates or updates dot_file.dot, generates a graph of navigation into the dot file
+analog -g dot_file file_log.log -- Creates or updates dot_file.dot, generates a graph of navigation into the dot file. Then it displays the top 10 targets.
 
 
-analog -g dot_file -t HH:MM file_log.log -- same as previous exemple but focused on the specified time 
+analog -g dot_file -t HH:MM file_log.log -- same as previous exemple but focused on the specified time. Then it displays the top 10 targets. 
 
 
 .SH AUTHOR

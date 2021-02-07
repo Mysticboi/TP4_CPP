@@ -14,6 +14,22 @@ int main(int argc, char const *argv[])
 	{
 		logFile_g(argv[argc-1],argv[2]);
 	}
+	else if(argc==4 && strcmp(argv[1],"-t")==0)
+	{
+		logFile_t(argv[argc-1],argv[2]);
+	}
+	else if(argc==3 && strcmp(argv[1],"-e")==0)
+	{
+		logFile_e(argv[argc-1]);
+	}
+	else if(argc==5 && strcmp(argv[1],"-t")==0 && strcmp(argv[3],"-e")==0)
+	{
+		logFile_t_e(argv[argc-1],argv[2]);
+	}
+	else if(argc==5 && strcmp(argv[1],"-e")==0 && strcmp(argv[2],"-t")==0)
+	{
+		logFile_t_e(argv[argc-1],argv[3]);
+	}
 	else if(argc==5 && strcmp(argv[1],"-g")==0 && strcmp(argv[3],"-e")==0)
 	{
 		logFile_g_e(argv[argc-1],argv[2]);
