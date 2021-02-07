@@ -1,1 +1,1 @@
-Essai de la commande ./analog -t heure -g nomfichier.dot nomFic.log qui permet la production du fichier graphe en tenant compte de l'heure, mais l'option -g n'est pas renseigné
+Essai de la commande ./analog -t HH:MM nomFic.log qui permet d'afficher le Top10 en tenant uniquement des hits entre l'heure HH:MM et HH+1:MM

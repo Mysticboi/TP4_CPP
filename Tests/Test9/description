@@ -1,1 +1,1 @@
-Essai de la commande ./analog -e -g nomfichier.dot nomFic.log qui permet la production du fichier graphe en exculant les images-css-js , mais -g n'est pas renseigné par l'utilisateur
+Essai de la commande ./analog -e nomFic.log qui permet d'afficher le Top10 sans tenir compte les cibles de type image, css ou js.

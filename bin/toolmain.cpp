@@ -21,11 +21,13 @@ void onlyLogFile(const char * logFileNamec)
 	{
 		myLigneLog = myFlux.ProchainLog();
         //Ligne Vide
-	    if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+	    if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
 	      	continue;
+		}
 	
-		if(myLigneLog.Cible=="-")
+		if(myLigneLog.Cible=="-"){
 			continue;
+		}
 		G.Recenser(myLigneLog.Cible);
 	}
 	G.Top10();
@@ -55,14 +57,18 @@ void logFile_g(const char * logFileNamec, const char * fileNameDotc)
 	{
 		myLigneLog = myFlux.ProchainLog();
 	//    Ligne Vide
-	    if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+	    if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
 	    	continue;
-		if(myLigneLog.Cible!="-" && myLigneLog.Referant!="-")
+		}
+		if(myLigneLog.Cible!="-" && myLigneLog.Referant!="-"){
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
-		else if(myLigneLog.Cible!="-")
+		}
+		if(myLigneLog.Cible!="-"){
 			G.Recenser(myLigneLog.Cible);
-		else 
+		}
+		else{ 
 			continue;
+		}
 	}
 		G.Top10();
 		G.GenererGraphe(dotFileName);
@@ -97,8 +103,9 @@ void logFile_t(const char * logFileNamec,const char * Heurec)
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
 		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
 		int HeureSpecifiePlus1 = HeureSpecifie+100;
-		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1)
+		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1){
 			continue;
+		}
 		G.Recenser(myLigneLog.Cible);
 	}
 	G.Top10();
@@ -123,14 +130,17 @@ void logFile_e(const char * logFileNamec)
 	{
 		myLigneLog = myFlux.ProchainLog();
         //Ligne Vide
-	    if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+	    if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
 	      	continue;
+		}
 	
-		if(myLigneLog.Cible=="-")
+		if(myLigneLog.Cible=="-"){
 			continue;
+		}
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
-		if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+		if(myLigneLog.Cible.find(".css")!=string::npos or myLigneLog.Cible.find(".js")!=string::npos or myLigneLog.Cible.find(".jpg")!=string::npos or myLigneLog.Cible.find(".gif")!=string::npos or myLigneLog.Cible.find(".png")!=string::npos)
 			continue;
+		
 		G.Recenser(myLigneLog.Cible);
 	}
 	G.Top10();
@@ -158,12 +168,14 @@ void logFile_t_e(const char * logFileNamec,const char * Heurec)
 	{
 		myLigneLog = myFlux.ProchainLog();
 //      Ligne Vide
-        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
       		continue;
-		if(myLigneLog.Cible=="-")
+		}
+		if(myLigneLog.Cible=="-"){
 			continue;
+		}
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
-		if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+		if(myLigneLog.Cible.find(".css")!=string::npos or myLigneLog.Cible.find(".js")!=string::npos or myLigneLog.Cible.find(".jpg")!=string::npos or myLigneLog.Cible.find(".gif")!=string::npos or myLigneLog.Cible.find(".png")!=string::npos)
 			continue;
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
 		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
@@ -205,11 +217,12 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
 		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
 		int HeureSpecifiePlus1 = HeureSpecifie+100;
-		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1)
+		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1){
 			continue;
+		}
 		if(myLigneLog.Cible!="-" && myLigneLog.Referant!="-")
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
-		else if(myLigneLog.Cible!="-")
+		if(myLigneLog.Cible!="-")
 			G.Recenser(myLigneLog.Cible);
 		else 
 			continue;
@@ -240,14 +253,16 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 	{
 		myLigneLog = myFlux.ProchainLog();
 //      Ligne Vide
-        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
       		continue;
+		}
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
-		if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+		if(myLigneLog.Cible.find(".css")!=string::npos or myLigneLog.Cible.find(".js")!=string::npos or myLigneLog.Cible.find(".jpg")!=string::npos or myLigneLog.Cible.find(".gif")!=string::npos or myLigneLog.Cible.find(".png")!=string::npos){
 			continue;
+		}
 		if(myLigneLog.Cible!="-" && myLigneLog.Referant!="-")
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
-		else if(myLigneLog.Cible!="-")
+		if(myLigneLog.Cible!="-")
 			G.Recenser(myLigneLog.Cible);
 		else 
 			continue;
@@ -279,19 +294,22 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 	{
 		myLigneLog = myFlux.ProchainLog();
 //      Ligne Vide
-        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
       		continue;
+		}
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
 		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
 		int HeureSpecifiePlus1 = HeureSpecifie+100;
-		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1)
+		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1){
 			continue;
+		}
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
-		else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-5,5)==".jpeg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+		if(myLigneLog.Cible.find(".css")!=string::npos or myLigneLog.Cible.find(".js")!=string::npos or myLigneLog.Cible.find(".jpg")!=string::npos or myLigneLog.Cible.find(".gif")!=string::npos or myLigneLog.Cible.find(".png")!=string::npos){
 			continue;
+		}
 		if(myLigneLog.Cible!="-" && myLigneLog.Referant!="-")
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
-		else if(myLigneLog.Cible!="-")
+		if(myLigneLog.Cible!="-")
 			G.Recenser(myLigneLog.Cible);
 		else 
 			continue;

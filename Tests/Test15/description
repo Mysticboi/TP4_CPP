@@ -1,0 +1,1 @@
+Essai de la commande ./analog -t HH:MM -e -g nomfichier.dot nomFich.Log  qui permet de générer le graphe et afficher le top10 en tenant compte seulement de la plage horaire et des cibles qui ne sont pas de type image css ou js.

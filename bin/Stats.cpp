@@ -111,6 +111,8 @@ void Stats::GenererGraphe(string nomFichier)
         cerr<<"Nom fichier erroné"<<endl;
         return;
     }
+    cout<<endl;
+    cout<< "Fichier " << nomFichier<<" généré !"<<endl;
     file<<"digraph {"<<endl;
     MapPrincipal::const_iterator itr1;
     MapSecondaire1::const_iterator itr2;
@@ -179,6 +181,7 @@ void Stats::GenererGraphe(string nomFichier)
         itFin--;
         multimap<unsigned int, string>::iterator itDebut=MMap.begin();
 
+        cout<<"Affichage du Top10:"<<endl;
 
         while(count<10 and itFin!=itDebut){
             cout << "/" << itFin->second << " ("<<itFin->first << " hits)" << endl;

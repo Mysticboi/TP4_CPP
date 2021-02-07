@@ -1,2 +1,2 @@
-Essai de la commande ./analog -g nomfichier.dot nomFic.log qui permet la production du fichier graphe, mais le fichier log comporte des lignes sans référent ou cible( -à la place) ces lignes doivent être ignorés.
+Essai de la commande ./analog -g nomfichier.dot nomFic.log qui permet la production du fichier graphe, mais le fichier log comporte des lignes sans référent ou cible( -à la place) ces lignes doivent être ignorés , le top10 tient compte de la ligne si le référant est pas présent mais que le cible y est présent.
 
