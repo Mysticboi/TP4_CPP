@@ -21,11 +21,13 @@ void onlyLogFile(const char * logFileNamec)
 //	{
 //		myLigneLog = myFlux.ProchainLog();
 ////      Ligne Vide
-//      if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+//      if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
 //      	continue;
-//		if(myLigneLog.Cible=="-")
+//		}
+
+//		if(myLigneLog.Cible=="-"){
 //			continue;
-//		else
+//		}
 //			G.AjouterTop10(myLigneLog.Cible);
 //	}
 //	G.Top10();
@@ -55,11 +57,12 @@ void logFile_g(const char * logFileNamec, const char * fileNameDotc)
 	{
 		myLigneLog = myFlux.ProchainLog();
 //      Ligne Vide
-      if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+      if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
       	continue;
-		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+	  }
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-"){
 			continue;
-		else
+		}
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
 	}
 	G.GenererGraphe(dotFileName);
@@ -89,10 +92,12 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 	{
 		myLigneLog = myFlux.ProchainLog();
 //      Ligne Vide
-        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
       		continue;
-		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+		}
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-"){
 			continue;
+		}
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
 		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
 		int HeureSpecifiePlus1 = HeureSpecifie+100;
@@ -128,12 +133,14 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 	{
 		myLigneLog = myFlux.ProchainLog();
 //      Ligne Vide
-        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
       		continue;
-		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+		}
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-"){
 			continue;
+		}
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
-		else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+		if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
 			continue;
 		else
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
@@ -166,10 +173,12 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 	{
 		myLigneLog = myFlux.ProchainLog();
 //      Ligne Vide
-        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur==""){
       		continue;
-		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+		}
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-"){
 			continue;
+		}
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
 		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
 		int HeureSpecifiePlus1 = HeureSpecifie+100;

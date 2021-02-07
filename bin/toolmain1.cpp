@@ -5,7 +5,7 @@ void checkLogFile(string nomficlog)
 	if(file.fail() || nomficlog.substr(nomficlog.size()-4,4)!=".log")
 	{
 		cout<<"Vous devez renseigner un fichier log existant avec une extension \".log\""<<endl;
-		cout<<"Pour plus d'informations veuillez consulter le manuel : \"man analog\""<<endl;
+		cout<<"Pour plus d'informations veuillez consulter le manuel : \"man ./analog.man\""<<endl;
 		file.close();
 		exit(0);
 	}
