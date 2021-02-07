@@ -20,6 +20,9 @@ void onlyLogFile(const char * logFileNamec)
 //	while(!myFlux.eof())
 //	{
 //		myLigneLog = myFlux.ProchainLog();
+////      Ligne Vide
+//      if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+//      	continue;
 //		if(myLigneLog.Cible=="-")
 //			continue;
 //		else
@@ -27,19 +30,6 @@ void onlyLogFile(const char * logFileNamec)
 //	}
 //	G.Top10();
 
-	//================================================Bloque temporaire===================================
-	myLigneLog = myFlux.ProchainLog();
-	cout<<"IP : "<<myLigneLog.IP<<endl;
-	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
-	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
-	cout<<"Date : "<<myLigneLog.Date<<endl;
-	cout<<"Heure : "<<myLigneLog.Heure<<endl;
-	cout<<"Cible : "<<myLigneLog.Cible<<endl;
-	cout<<"Status : "<<myLigneLog.Status<<endl;
-	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
-	cout<<"Referant : "<<myLigneLog.Referant<<endl;
-	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
-	//================================================Fin Bloque temporaire===================================
 
 
 }
@@ -64,6 +54,9 @@ void logFile_g(const char * logFileNamec, const char * fileNameDotc)
 	while(!myFlux.eof())
 	{
 		myLigneLog = myFlux.ProchainLog();
+//      Ligne Vide
+      if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+      	continue;
 		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
 			continue;
 		else
@@ -71,21 +64,6 @@ void logFile_g(const char * logFileNamec, const char * fileNameDotc)
 	}
 	G.GenererGraphe(dotFileName);
 
-	/*
-	//================================================Bloque temporaire===================================
-	myLigneLog = myFlux.ProchainLog();
-	cout<<"IP : "<<myLigneLog.IP<<endl;
-	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
-	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
-	cout<<"Date : "<<myLigneLog.Date<<endl;
-	cout<<"Heure : "<<myLigneLog.Heure<<endl;
-	cout<<"Cible : "<<myLigneLog.Cible<<endl;
-	cout<<"Status : "<<myLigneLog.Status<<endl;
-	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
-	cout<<"Referant : "<<myLigneLog.Referant<<endl;
-	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
-	//================================================Fin Bloque temporaire===================================
-	*/
 }
 
 //gère le cas où les options -g et -t sont renseignées
@@ -110,6 +88,9 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 	while(!myFlux.eof())
 	{
 		myLigneLog = myFlux.ProchainLog();
+//      Ligne Vide
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+      		continue;
 		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
 			continue;
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
@@ -123,20 +104,6 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 	G.GenererGraphe(dotFileName);
 
 
-	//================================================Bloque temporaire===================================
-	/*myLigneLog = myFlux.ProchainLog();
-	cout<<"IP : "<<myLigneLog.IP<<endl;
-	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
-	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
-	cout<<"Date : "<<myLigneLog.Date<<endl;
-	cout<<"Heure : "<<myLigneLog.Heure<<endl;
-	cout<<"Cible : "<<myLigneLog.Cible<<endl;
-	cout<<"Status : "<<myLigneLog.Status<<endl;
-	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
-	cout<<"Referant : "<<myLigneLog.Referant<<endl;
-	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
-	*/
-	//================================================Fin Bloque temporaire===================================
 }
 
 //gère le cas où  les options -g et -e sont renseignées
@@ -160,6 +127,9 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 	while(!myFlux.eof())
 	{
 		myLigneLog = myFlux.ProchainLog();
+//      Ligne Vide
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+      		continue;
 		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
 			continue;
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
@@ -171,20 +141,6 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 		G.GenererGraphe(dotFileName);
 
 
-	//================================================Bloque temporaire===================================
-	/*myLigneLog = myFlux.ProchainLog();
-	cout<<"IP : "<<myLigneLog.IP<<endl;
-	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
-	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
-	cout<<"Date : "<<myLigneLog.Date<<endl;
-	cout<<"Heure : "<<myLigneLog.Heure<<endl;
-	cout<<"Cible : "<<myLigneLog.Cible<<endl;
-	cout<<"Status : "<<myLigneLog.Status<<endl;
-	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
-	cout<<"Referant : "<<myLigneLog.Referant<<endl;
-	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
-	*/
-	//================================================Fin Bloque temporaire===================================
 }
 
 //gère le cas où les options -g et -t et -e sont renseignées
@@ -209,6 +165,9 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 	while(!myFlux.eof())
 	{
 		myLigneLog = myFlux.ProchainLog();
+//      Ligne Vide
+        if(myLigneLog.Cible=="" && myLigneLog.Referant=="" && myLigneLog.Navigateur=="")
+      		continue;
 		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
 			continue;
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
@@ -224,18 +183,4 @@ void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const cha
 	}
 		G.GenererGraphe(dotFileName);
 
-	//================================================Bloque temporaire===================================
-	/*myLigneLog = myFlux.ProchainLog();
-	cout<<"IP : "<<myLigneLog.IP<<endl;
-	cout<<"UserLogname : "<<myLigneLog.UserLogname<<endl;
-	cout<<"AuthenticatedUser : "<<myLigneLog.AuthenticatedUser<<endl;
-	cout<<"Date : "<<myLigneLog.Date<<endl;
-	cout<<"Heure : "<<myLigneLog.Heure<<endl;
-	cout<<"Cible : "<<myLigneLog.Cible<<endl;
-	cout<<"Status : "<<myLigneLog.Status<<endl;
-	cout<<"QuantiteDonnees : "<<myLigneLog.QuantiteDonnees<<endl;
-	cout<<"Referant : "<<myLigneLog.Referant<<endl;
-	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
-	*/
-	//================================================Fin Bloque temporaire===================================
 }

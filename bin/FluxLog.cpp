@@ -86,6 +86,12 @@ LigneLog FluxLog:: ProchainLog(){
 	LigneLog myLigneLog;
 	string line;
 	getline(file,line);
+	//Si la ligne est vide ou trop courte
+	if (line.size()<=3)
+	{
+		return myLigneLog;
+	}
+
 
 	vector <string> tokens;
 
