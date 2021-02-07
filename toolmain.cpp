@@ -105,7 +105,8 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 	LigneLog myLigneLog;
 	FluxLog myFlux(logFileName);
 	Stats G;
-	
+	int HeureSpecifie;
+	int HeureSpecifiePlus1;
 	//boucle de traitement du fichier
 	while(!myFlux.eof())
 	{
@@ -113,14 +114,19 @@ void logFile_g_t(const char * logFileNamec,const char * fileNameDotc,const char 
 		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
 			continue;
 		int HeureLigneLog = stoi(myLigneLog.Heure.substr(0,2))*100+stoi(myLigneLog.Heure.substr(3,2));
-		int HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
-		int HeureSpecifiePlus1 = HeureSpecifie+100;
+		HeureSpecifie = stoi(Heure.substr(0,2))*100+stoi(Heure.substr(3,2));
+		HeureSpecifiePlus1 = HeureSpecifie+100;
 		if(HeureLigneLog<HeureSpecifie || HeureLigneLog>HeureSpecifiePlus1)
 			continue;
-		else
+		else {
 			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
+			G.Recenser(myLigneLog.Cible);
+		}
 	}
 	G.GenererGraphe(dotFileName);
+	cout << "Dot-file " << dotFileName << " generated." << endl;
+	cout << "Warning : only hits between " << Heure.substr(0,2) << "h" << Heure.substr(3,2) << " and " << stoi(Heure.substr(0,2))+1 <<"h" << Heure.substr(3,2) << " have been taken into account" << endl;
+	G.Top10();
 
 
 	//================================================Bloc temporaire===================================
@@ -160,15 +166,23 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 	while(!myFlux.eof())
 	{
 		myLigneLog = myFlux.ProchainLog();
-		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-")
+		if(myLigneLog.Cible=="-" || myLigneLog.Referant=="-") {
 			continue;
 		//On passe si le fichier est un js un css un jpeg un gif ou un png
-		else if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
-			continue;
-		else
-			G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
+		} else {
+			if(myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".css" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-3,3)==".js" || myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".jpg"||myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".gif"|| myLigneLog.Cible.substr(myLigneLog.Cible.size()-4,4)==".png")
+			{
+				continue;
+		 	} else {
+				G.AjouterGraphe(myLigneLog.Cible,myLigneLog.Referant);
+				G.Recenser(myLigneLog.Cible);
+		}
+	}
 	}
 		G.GenererGraphe(dotFileName);
+		cout << "Dot-file " << dotFileName << " generated." << endl;
+		G.Top10();
+}
 
 
 	//================================================Bloc temporaire===================================
@@ -185,7 +199,7 @@ void logFile_g_e(const char * logFileNamec, const char * fileNameDotc)
 	cout<<"Navigateur : "<<myLigneLog.Navigateur<<endl;
 	*/
 	//================================================Fin Bloc temporaire===================================
-}
+
 
 //gère le cas où les options -g et -t et -e sont renseignées
 void logFile_g_t_e(const char * logFileNamec,const char * fileNameDotc,const char * Heurec)
